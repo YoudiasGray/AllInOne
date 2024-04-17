@@ -10,10 +10,10 @@
         <Button Content="选择文件" HorizontalAlignment="Left" Height="50" Margin="13,7,0,0" VerticalAlignment="Top" Width="110" Click="Button_chosefile"/>
         <Label HorizontalAlignment="Left" Height="25" Margin="150,25,0,0" VerticalAlignment="Top" Width="480"/>
         <Label Content="延时时间(S)" HorizontalAlignment="Left" Height="35" Margin="25,65,0,0" VerticalAlignment="Top" Width="110"/>
-        <TextBox x:Name="DelayTime" HorizontalAlignment="Left" Height="35" Margin="137,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="DelayTime" HorizontalAlignment="Left" Height="35" Margin="137,65,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="160"/>
         <Button Content="开始" HorizontalAlignment="Left" Height="50" Margin="698,7,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click_start"/>
-        <TextBox x:Name="Content" HorizontalAlignment="Center" Height="305" Margin="0,105,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="780"/>
-        <Label Content="Label" Name="FileName" HorizontalAlignment="Left" Height="40" Margin="145,10,0,0" VerticalAlignment="Top" Width="530"/>
+        <TextBox x:Name="Content" AcceptsReturn="True" HorizontalAlignment="Center" Height="305" Margin="0,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="780"/>
+        <Label  Content="" Name="FileName" HorizontalAlignment="Left" Height="40" Margin="145,10,0,0" VerticalAlignment="Top" Width="530"/>
         <Button Content="清除" HorizontalAlignment="Left" Height="35" Margin="335,65,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click_clear"/>
 
     </Grid>

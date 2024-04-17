@@ -38,6 +38,7 @@ namespace AutoCopy_framwork
             if (openFileDialog.ShowDialog() == true)
             {
                 string fileName = openFileDialog.FileName;
+                FileName.Content = fileName;
                 Content.Text = File.ReadAllText(fileName);
             }
         }
@@ -66,10 +67,26 @@ namespace AutoCopy_framwork
                 {
                     tmpStr = content.Substring(index);
                 }
-                Clipboard.SetText(tmpStr);
-                Paste();
-                Thread.Sleep(200);
-                index += length;
+                try
+                {
+                    //Clipboard.SetText(tmpStr);
+                    Clipboard.SetDataObject(tmpStr);
+                    Paste();                    
+                    Thread.Sleep(200);
+                    
+                }
+                catch (Exception ex)
+                {
+                    Clipboard.SetDataObject(tmpStr, true);
+                    //Clipboard.SetText(tmpStr);
+                    Paste();
+                    Thread.Sleep(200);
+                }
+                finally
+                {
+                    index += length;
+                    Clipboard.Clear();
+                }
             }
             System.Windows.MessageBox.Show("OK");
         }
@@ -78,8 +95,6 @@ namespace AutoCopy_framwork
         {
             SendKeys.SendWait("^v");
         }
-
-
 
         private void Button_Click_clear(object sender, RoutedEventArgs e)
         {
